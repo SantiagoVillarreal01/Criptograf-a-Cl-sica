@@ -10,7 +10,8 @@ public class CifradoPlayfair {
 
     public static String descifrar(String textoCifrado, String clave) {
         char[][] matriz = generarMatriz(clave);
-        return procesarTexto(textoCifrado, matriz, false);
+        String textoSinEspacios = textoCifrado.toUpperCase().replaceAll("[^A-Z]", "");
+        return procesarTexto(textoSinEspacios, matriz, false);
     }
 
     private static String prepararTexto(String texto) {
